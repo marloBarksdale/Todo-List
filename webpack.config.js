@@ -5,6 +5,10 @@ module.exports = {
     mode: "development",
     entry: {
        index: './src/index.js',
+       task:"./src/task.js",
+       project:"./src/project.js",
+       projectElement:"./src/projectElement.js",
+     
    
     },
 

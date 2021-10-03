@@ -25,6 +25,9 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "boxicons": "^2.0.9",
     "moment": "^2.29.1"
   }
 }

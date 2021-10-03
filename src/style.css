@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+body {
+    background-image: url(./nothing.png);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    place-items: start;
+    line-height: 1.6;
+    /* background: var(--clr-neutral-900); */
+    font-family: sans-serif;
+    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+    background-position: right;
+    flex: 6;
+    background-position: center;
+    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    height: 50px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+box-icon {
+    font-size: 30px;
+    ;
+    font-weight: bold;
+    width: 50px;
+}
+
+.content {
+    display: flex;
+    width: 77%;
+    height: 80%;
+    background-color: #00bcd4de;
+    position: absolute;
+    /* margin-left: auto;
+    margin-right: auto; */
+    opacity: 0.97;
+    border-radius: 20px;
+    transition: 1.5s;
+    overflow: auto;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 0.5em;
+    opacity: 0.7;
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: #8f007c;
+    border-radius: 0.5rem;
+}
+
+.content::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.menuIcon {
+    transition: 5s ease-in-out;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: auto;
+    marker-end: none;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 30px;
+    /* position: relative; */
+}
+
+.button::after {
+    content: "";
+    border: 15px black;
+    width: 125%;
+    height: 3px;
+    position: absolute;
+    /* top: 0; */
+    background: linear-gradient(to right, transparent, orange, transparent);
+    bottom: -10px;
+    /* left: 6px; */
+    right: -25px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span::after {
+    content: '\2795';
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    right: -30px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 30px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: -5px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    ;
+}
+
+.card>h2 {
+    text-align: center;
+}
+
+.sidenav {
+    width: 0;
+    height: 100%;
+    background-color: turquoise;
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 1.5s;
+    opacity: 0.9;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addProjectContainer {
+    display: flex;
+    align-items: center;
+}
+
+buttons {
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    font-size: 22px;
+    opacity: 1;
+    display: block;
+    transition: 0.3s;
+    background-color: aqua;
+    border: solid 1px;
+    /* border-radius: 0.5em; */
+    width: 100%;
+    margin-bottom: 10px;
+    /* margin-left: 17px; */
+    text-align: center;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.exitContainer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+}
+
+.exitContainer::after {
+    content: "+";
+    font-size: 25px;
+    transform: rotate(45deg);
+    font-weight: bolder;
+    float: right;
+    padding-right: 15px;
+}
+
+.main {
+    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+    background-position: right;
+    flex: 6;
+    background-position: center;
+}
+
+.accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem 1rem;
+}
+
+.accordionItem {
+    background-color: aqua;
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.accordionItemHeader {
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    cursor: pointer;
+}
+
+.accordionItemHeader::after {
+    content: "\25be";
+    font-size: 1rem;
+    position: absolute;
+    /* right: 0.5rem; */
+    right: 50%;
+    bottom: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.accordionItemHeader.active::after {
+    /* content: "\02c6"; */
+    transform: rotate(180deg);
+}
+
+.accordionItemHeaderTitle {
+    width: 100%;
+    display: block;
+    padding-left: 50px;
+}
+
+.projectContent.card {
+    position: absolute;
+}
+
+.deleteProject {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.deleteProject:hover {
+    transform: scale(1.1) rotate(45deg);
+    transition-delay: 500ms;
+    transition-duration: 500ms;
+}
+
+.accordionItemBody {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.accordionItemBodyContent {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #008f68, transparent) 1;
+}
+
+.accordionItemHeader.active+.accordionItemBody {
+    max-height: 200px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    background-color: lightseagreen;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    color: white;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.closeBox {
+    height: 10px;
+    width: 50px;
+    position: relative;
+}
+
+.closeBox::after {
+    content: "+";
+    top: -16px;
+    right: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+}
+
+.closeBox:hover {
+    transform: scale(0.5) rotate(45deg);
+    transition-delay: 500ms;
+    transition-duration: 500ms;
+    transform: scale(1.1);
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.projectListContainer button {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.projectListContainer button:hover {
+    background-color: #45a049;
+}
+
+.projectForm {
+    padding-top: 15px;
+    position: relative;
+}
+
+.projectForm>span::after {
+    content: '+';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 5px;
+    transform: rotate(45deg);
+}
+
+.titleContainer {
+    display: flex;
+}
+
+.titleContainer>h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addTaskButton {
+    position: fixed;
+    /* background: white; */
+    width: max-content;
+    height: max-content;
+    z-index: 100;
+    bottom: 70px;
+    right: 32px;
+    transition: all 1.5s;
+}
+
+.addTaskButton::after {
+    content: "\2795";
+    background: white;
+    border-radius: 50%;
+    font-size: 25px;
+    padding: 15px;
+}
